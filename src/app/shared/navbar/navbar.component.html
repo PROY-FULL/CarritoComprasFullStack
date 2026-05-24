@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg bg-warning">
+  <div class="container-fluid">
+    <!-- Logo / Nombre -->
+    <a class="navbar-brand text-black" href="#">Mi App</a>
+
+    <!-- Botón toggler -->
+    <button
+      class="navbar-toggler bg-warning"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasNavbar"
+      aria-controls="offcanvasNavbar"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Offcanvas -->
+    <div
+      class="offcanvas offcanvas-end text-warning"
+      tabindex="-1"
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title text-black" id="offcanvasNavbarLabel">
+          Menú
+        </h5>
+        <button
+          type="button"
+          class="btn-close bg-primary"
+          data-bs-dismiss="offcanvas"
+        ></button>
+      </div>
+
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1">
+          <li class="nav-item">
+            <a class="nav-link text-black" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-black" routerLink="/producto">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-black" routerLink="/contacto">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-black" routerLink="/detalle-carrito">
+              <span class="badge bg-danger"
+                ><i class="bi bi-cart" style="font-size: 18px"></i>
+                {{ total() }}</span
+              >
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="button nav-link text-black" (click)="salir()">Salir</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

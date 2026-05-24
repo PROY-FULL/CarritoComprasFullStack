@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="mb-3 mt-3">
+    <label for="nombreProducto" class="form-label"> NombreProducto </label>
+    <input
+      type="text"
+      class="form-control"
+      (keyup)="applyFilter($event)"
+      id="producto"
+      ,
+      placeholder="Escribe el nombre"
+    />
+  </div>
+  <button
+    class="mb-3"
+    mat-mini-fab
+    aria-label="Example icon button with a menu icon"
+    color="primary"
+    (click)="agregarProducto()"
+  >
+    <mat-icon>add</mat-icon>
+  </button>
+  <div class="mat-elevation-z8">
+    <table mat-table table [dataSource]="dataSource">
+      <!-- Position Column -->
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef>Acciones</th>
+        <td mat-cell *matCellDef="let element">
+          <button
+            mat-mini-fab
+            aria-label="Example icon button with a menu icon"
+            color="primary"
+            (click)="editarProducto(element)"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+        <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="descripcion">
+        <th mat-header-cell *matHeaderCellDef>Descripcion</th>
+        <td mat-cell *matCellDef="let element">{{ element.descripcion }}</td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="precio">
+        <th mat-header-cell *matHeaderCellDef>Precio</th>
+        <td mat-cell *matCellDef="let element">{{ element.precio }}</td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="ruta">
+        <th mat-header-cell *matHeaderCellDef>Ruta</th>
+        <td mat-cell *matCellDef="let element">{{ element.ruta }}</td>
+      </ng-container>
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="stock">
+        <th mat-header-cell *matHeaderCellDef>Stock</th>
+        <td mat-cell *matCellDef="let element">{{ element.stock }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons
+      aria-label="Select page of periodic elements"
+    >
+    </mat-paginator>
+  </div>
+</div>

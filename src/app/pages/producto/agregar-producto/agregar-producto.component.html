@@ -1,0 +1,88 @@
+<mat-toolbar color="primary">
+  <span>Editar Producto</span>
+  <span class="example-spacer"></span>
+
+  <button
+    (click)="closeDilog()"
+    mat-icon-button
+    class="example-icon estilosBtn"
+    aria-label="Example icon-button with share icon"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-dialog-content class="mat-typography">
+  <div class="card-body">
+    <form [formGroup]="agregarFoms" (ngSubmit)="agregar()">
+      <div class="mb-3">
+        <label for="email" class="form-label">Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nombre"
+          formControlName="Nombre"
+          placeholder="Nombre Producto"
+          required
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Descripcion</label>
+        <input
+          type="text"
+          class="form-control"
+          id="descripcion"
+          formControlName="Descripcion"
+          placeholder="Descripcion"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Precio</label>
+        <input
+          type="text"
+          class="form-control"
+          id="precio"
+          formControlName="Precio"
+          placeholder="Precio"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Stock</label>
+        <input
+          type="text"
+          class="form-control"
+          id="stock"
+          formControlName="Stock"
+          placeholder="Stock"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Ruta</label>
+        <input
+          type="text"
+          class="form-control"
+          id="ruta"
+          formControlName="Ruta"
+          placeholder="Ruta"
+        />
+      </div>
+
+      <div class="form-check mb-3 mt-3">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          formControlName="Activo"
+          id="activo"
+        />
+        <label class="form-check-label" for="checkDefault"> Activo </label>
+      </div>
+
+      <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary btn-lg">Guardar</button>
+      </div>
+    </form>
+  </div>
+</mat-dialog-content>

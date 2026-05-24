@@ -1,0 +1,41 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card shadow-lg p-4 propiedades">
+    <div class="card-body">
+      <h3 class="text-center mb-4 fw-bold">Iniciar Sessión</h3>
+      <form [formGroup]="loginForm" (ngSubmit)="Login()">
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo Electrónico</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            aria-describedby="emailHelp"
+            formControlName="email"
+            placeholder="ejemplo@Correo.com"
+          />
+        </div>
+        <!--Password-->
+        <div class="mb-3">
+          <label for="password" class="form-label">Contraseña</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            formControlName="password"
+            placeholder="*******"
+          />
+        </div>
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-primary btn-lg">Iniciar</button>
+          <button type="submit" class="btn btn-primary">
+            Recordar Contraseña
+          </button>
+        </div>
+        <p class="text-center mt-3 small">
+          ¿No tienes cuenta?
+          <a href="#" class="text-decoration-none">Regístrate aquí</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>

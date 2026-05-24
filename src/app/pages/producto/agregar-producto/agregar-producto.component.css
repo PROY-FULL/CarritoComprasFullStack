@@ -1,0 +1,12 @@
+mat-icon {
+  color: white;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.estilosBtn {
+  background: transparent;
+  border: 0px;
+}
